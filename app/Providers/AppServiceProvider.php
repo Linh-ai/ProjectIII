@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Repository\CategoryRepository;
+use App\Repositories\RepositoryInterface\CategoryRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+    public $bindings =[
+        CategoryRepositoryInterface::class => CategoryRepository::class
+    ];
     /**
      * Bootstrap any application services.
      *
