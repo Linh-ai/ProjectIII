@@ -209,11 +209,11 @@
                                 </a>
                                 <ul class="sidebar-submenu">
                                     <li>
-                                        <a href="">Brand List</a>
+                                        <a href="{{route('all_brands')}}">Brand List</a>
                                     </li>
 
                                     <li>
-                                        <a href="">Add New Brand</a>
+                                        <a href="{{route('add_brand')}}">Add New Brand</a>
                                     </li>
                                 </ul>
                             </li>

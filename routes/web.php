@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +29,13 @@ Route::prefix('admin')->group(function() {
     Route::get('edit-category/{id}', [CategoryController::class, 'show'])->name('show_category');
     Route::post('edit-category/{id}', [CategoryController::class, 'update']);
     Route::get('delete-category/{id}', [CategoryController::class, 'destroy'])->name('delete_category');
+
+    //brand
+    Route::get('list-brands', [BrandController::class, 'list'])->name('all_brands');
+    Route::get('add-new-brand', [BrandController::class, 'viewAdd'])->name('add_brand');
+    Route::post('add-new-brand', [BrandController::class, 'create']);
+    Route::get('edit-brand/{id}', [BrandController::class, 'show'])->name('show_brand');
+    Route::post('edit-brand/{id}', [BrandController::class, 'update']);
+    Route::get('delete-brand/{id}', [BrandController::class, 'destroy'])->name('delete_brand');
+
 });
