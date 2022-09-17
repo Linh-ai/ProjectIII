@@ -185,7 +185,7 @@
                                 </a>
                                 <ul class="sidebar-submenu">
                                     <li>
-                                        <a href="">All Users</a>
+                                        <a href="{{route('all_users')}}">All Users</a>
                                     </li>
                                 </ul>
                             </li>

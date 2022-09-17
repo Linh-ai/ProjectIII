@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +47,9 @@ Route::prefix('admin')->group(function() {
     Route::get('edit-product/{id}', [ProductController::class, 'show'])->name('show_product');
     Route::post('edit-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy'])->name('delete_product');
+
+    //user
+    Route::get('all-users', [UserController::class, 'list'])->name('all_users');
+    Route::get('edit-user/{id}', [UserController::class, 'show'])->name('show_user');
+    Route::post('edit-user/{id}', [UserController::class, 'update']);
 });
