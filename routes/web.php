@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,4 +39,11 @@ Route::prefix('admin')->group(function() {
     Route::post('edit-brand/{id}', [BrandController::class, 'update']);
     Route::get('delete-brand/{id}', [BrandController::class, 'destroy'])->name('delete_brand');
 
+    //product
+    Route::get('list-products', [ProductController::class, 'list'])->name('all_products');
+    Route::get('add-new-product', [ProductController::class, 'viewAdd'])->name('add_product');
+    Route::post('add-new-product', [ProductController::class, 'create']);
+    Route::get('edit-product/{id}', [ProductController::class, 'show'])->name('show_product');
+    Route::post('edit-product/{id}', [ProductController::class, 'update']);
+    Route::get('delete-product/{id}', [ProductController::class, 'destroy'])->name('delete_product');
 });
