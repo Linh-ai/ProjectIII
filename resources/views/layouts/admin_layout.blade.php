@@ -197,7 +197,7 @@
                                 </a>
                                 <ul class="sidebar-submenu">
                                     <li>
-                                        <a href="">Order List</a>
+                                        <a href="{{route('list_order')}}">Order List</a>
                                     </li>
                                 </ul>
                             </li>
