@@ -6,6 +6,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,7 @@ Route::prefix('/')->group(function () {
  * Giao Dien Admin
  */
 Route::prefix('admin')->group(function() {
+    //Route::get('all-users', [UserController::class, 'list'])->name('all_users');
 
     //category
     Route::get('list-categories', [CategoryController::class, 'list'])->name('all_categories');
@@ -78,4 +80,11 @@ Route::prefix('admin')->group(function() {
     Route::get('all-users', [UserController::class, 'list'])->name('all_users');
     Route::get('edit-user/{id}', [UserController::class, 'show'])->name('show_user');
     Route::post('edit-user/{id}', [UserController::class, 'update']);
+
+    //order
+    Route::get('list-order', [OrderController::class, 'view'])->name('list_order');
+    Route::get('detail-order/{id}', [OrderController::class, 'detail'])->name('detail_order');
+    Route::get('edit-order/{id}', [OrderController::class, 'show'])->name('edit_order');
+    Route::post('edit-order/{id}', [OrderController::class, 'update']);
+    Route::get('delete-order/{id}', [OrderController::class, 'delete'])->name('delete_order');
 });
