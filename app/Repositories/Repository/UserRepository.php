@@ -19,4 +19,17 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         // TODO: Implement logicCreate() method.
     }
 
+    public function checkExistEmail($email)
+    {
+        return $this->model->where('email', $email)->get()->toArray();
+    }
+
+    public function updateStatusByEmail($email)
+    {
+        return $this->model->where('email', $email)->update(['status' => 1]);
+    }
+
+    public function checkRoleUser($email){
+        return $this->model->where('email', $email)->get()->toArray();
+    }
 }

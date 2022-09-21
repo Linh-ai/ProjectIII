@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Giao Dien User
+ */
+//giao dien home
+Route::get('', [HomeController::class, 'home'])->name('home');
+//phan dang nhap - dang ki  - xem thong tin - logout cua user
+Route::prefix('user')->group(function () {
+    Route::get('register', [UserController::class, 'register'])->name('register');
+    Route::post('register', [UserController::class, 'create']);
+    Route::get('login', [UserController::class, 'login'])->name('login');
+    Route::post('login', [UserController::class, 'checkLogin'])->name('check.login');
+    Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
+    Route::get('dashboard',[UserController::class, 'dashboard'])->name('dashboard');
+
+});
+//sau khi da dang nhap/dang ki thanh cong
+Route::prefix('/')->group(function () {
+    Route::get('login', [UserController::class, 'login'])->name('loginuser');
+    Route::post('login', [UserController::class, 'checkLogin'])->name('check.login');
+
+});
+
+
+/**
+ * Giao Dien Admin
+ */
 Route::prefix('admin')->group(function() {
-    //Route::get('all-users', [UserController::class, 'list'])->name('all_users');
 
     //category
     Route::get('list-categories', [CategoryController::class, 'list'])->name('all_categories');
