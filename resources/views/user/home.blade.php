@@ -142,7 +142,7 @@
 
                         </div>
                         {{--                    LINK TOI DANH SACH SP--}}
-                        <a href="" class="contain-banner">
+                        <a href="{{route('productlist')}}" class="contain-banner">
                             <div class="banner-content with-big">
                                 <h2 class="mb-2">New Hoodie</h2>
                                 <span>BUY ONE GET ONE FREE</span>
@@ -153,13 +153,13 @@
                 {{--            BANNER SO 2--}}
                 <div class="col-lg-4 col-md-6">
                     <div class="collection-banner p-bottom p-center text-center">
-                        {{--                    LINK TOI PRODUCT LIST--}}
-                        <a href="" class="banner-img">
+                        <a href="shop-left-sidebar.html" class="banner-img">
                             <img src="{{asset('voxo_front/assets/images/fashion/banner/2.jpg')}}" class="bg-img blur-up lazyload" alt="">
                         </a>
                         <div class="banner-detail">
                         </div>
-                        <a href="" class="contain-banner">
+                        {{--                    LINK TOI PRODUCT LIST--}}
+                        <a href="{{route('productlist')}}" class="contain-banner">
                             <div class="banner-content with-big">
                                 <h2 class="mb-2">Women Fashion</h2>
                                 <span>New offer 50% off</span>
@@ -177,7 +177,7 @@
 
                         </div>
                         {{--                    LINK TOI PRODUCT LIST--}}
-                        <a href="" class="contain-banner">
+                        <a href="{{route('productlist')}}" class="contain-banner">
                             <div class="banner-content with-big">
                                 <h2 class="mb-2">New Jacket</h2>
                                 <span>BUY ONE GET ONE FREE</span>
@@ -570,7 +570,7 @@
                 <div class="col-lg-6 ratio2_1">
                     <div class="collection-banner p-right text-right">
                         {{--                    LINK DAN TOI DANH SACH SP--}}
-                        <a href="" class="banner-img">
+                        <a href="{{route('productlist')}}" class="banner-img">
                             <img src="{{asset('voxo_front/assets/images/fashion/banner/4.jpg')}}" class="bg-img blur-up lazyload" alt="">
                         </a>
                         <div class="banner-text">
@@ -605,7 +605,7 @@
                                     <img src="{{asset('voxo_front/assets/images/fashion/banner/6.jpg')}}" class="bg-img blur-up lazyload" alt="">
                                 </a>
                                 {{--                            LINK TOI DANH SACH SP--}}
-                                <a href="" class="contain-banner">
+                                <a href="{{route('productlist')}}" class="contain-banner">
                                     <div class="banner-content with-bg">
                                         <h3 class="mb-1">New jacket</h3>
                                     </div>
@@ -620,7 +620,7 @@
                                          alt="">
                                 </a>
                                 {{--                            LINK TOI DS SP--}}
-                                <a href="" class="contain-banner">
+                                <a href="{{route('productlist')}}" class="contain-banner">
                                     <div class="banner-content with-bg">
                                         <h3 class="mb-1">New jacket</h3>
                                     </div>

@@ -43,6 +43,15 @@ Route::prefix('/')->group(function () {
     Route::get('login', [UserController::class, 'login'])->name('loginuser');
     Route::post('login', [UserController::class, 'checkLogin'])->name('check.login');
 
+    //Xem danh sach - xem chi tiet sp
+    Route::prefix('product')->group(function () {
+        Route::get('product-list', [HomeController::class, 'productlist'])->name('productlist');
+        Route::get('product-detail/{id}', [HomeController::class, 'productDetail'])->name('productdetail');
+    });
+
+    //cart
+    Route::get('addcart', [CartController:: class, 'addCart'])->name('addCart');
+    Route::get('addminicart', [CartController:: class, 'showMiniCart'])->name('showminicart');
 });
 
 
